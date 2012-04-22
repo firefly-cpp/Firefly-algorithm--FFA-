@@ -38,6 +38,7 @@ int NumEval;			// number of evaluations
 int Index[MAX_FFA];		// sort of fireflies according to fitness values
 
 double ffa[MAX_FFA][MAX_D];	// firefly agents
+double ffa_tmp[MAX_FFA][MAX_D]; // intermediate population
 double f[MAX_FFA];		// fitness values
 double I[MAX_FFA];		// light intensity
 double nbest[MAX_FFA];          // the best solution found so far
@@ -126,7 +127,6 @@ void sort_ffa()
 void replace_ffa()
 {
 	int i, j;
-	double ffa_tmp[MAX_FFA][MAX_D];	// firefly agents
 
 	// copy original population to temporary area
 	for(i=0;i<n;i++)
@@ -172,7 +172,7 @@ void move_ffa()
 		for(j=0;j<n;j++)
 		{
 			r = 0.0;
-			for(k=0;k<n;k++)
+			for(k=0;k<D;k++)
 			{
 				r += (ffa[i][k]-ffa[j][k])*(ffa[i][k]-ffa[j][k]);
 			}
@@ -181,11 +181,11 @@ void move_ffa()
 			{
 				double beta0 = 1.0;
 				beta = (beta0-betamin)*exp(-gama*pow(r, 2.0))+betamin;
-				for(k=0;k<n;k++)
+				for(k=0;k<D;k++)
 				{
 					r = (   (double)rand() / ((double)(RAND_MAX)+(double)(1)) );
 					double tmpf = alpha*(r-0.5)*scale;
-					ffa[i][k] = ffa[i][k]*(1.0-beta)+ffa[j][k]*beta+tmpf;
+					ffa[i][k] = ffa[i][k]*(1.0-beta)+ffa_tmp[j][k]*beta+tmpf;
 				}
 			}
 		}

@@ -86,7 +86,7 @@ void init_ffa()
 		for (j=0;j<D;j++)
 		{
 			r = (   (double)rand() / ((double)(RAND_MAX)+(double)(1)) );
-			ffa[i][j]=r*(ub[i]-lb[i])+lb[i];
+			ffa[i][j]=r*(ub[j]-lb[j])+lb[j];
 		}
 		f[i] = 1.0;			// initialize attractiveness
 		I[i] = f[i];

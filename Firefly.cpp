@@ -14,7 +14,7 @@ in Bioinspired Optimization Methods and their Applications (BIOMA 2012), B. Fili
 Jozef Stefan Institute, Ljubljana, Slovenia, 2012 */
 
 /*Contact:
-Iztok Fister (iztok.fister@uni-mb.si)
+Iztok Fister Jr. (iztok.fister1@um.si)
 */
 
 #include <iostream>
@@ -41,7 +41,7 @@ double ffa[MAX_FFA][MAX_D];	// firefly agents
 double ffa_tmp[MAX_FFA][MAX_D]; // intermediate population
 double f[MAX_FFA];		// fitness values
 double I[MAX_FFA];		// light intensity
-double nbest[MAX_FFA];          // the best solution found so far
+double nbest[MAX_D];          // the best solution found so far
 double lb[MAX_D];		// upper bound
 double ub[MAX_D];		// lower bound
 

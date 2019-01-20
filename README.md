@@ -1,6 +1,14 @@
-Classic Firefly algorithm coded using C/C++ programming language 
+# Firefly algorithm coded using C/C++ programming language 
 
-Reference Papers:
+## Compiling
+
+    g++ -Wall Firefly.cpp -o Firefly
+    
+## Run example
+    
+    ./Firefly -g1000 -d10 -n10
+          
+## Reference Papers:
 
 I. Fister Jr.,  X.-S. Yang,  I. Fister, J. Brest. [Memetic firefly algorithm for combinatorial optimization](http://www.iztok-jr-fister.eu/static/publications/44.pdf) in Bioinspired Optimization Methods and their Applications (BIOMA 2012), B. Filipic and J.Silc, Eds. 
 Jozef Stefan Institute, Ljubljana, Slovenia, 2012 
